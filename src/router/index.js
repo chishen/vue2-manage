@@ -21,6 +21,15 @@ const adminSet = r => require.ensure([], () => r(require('@/page/adminSet')), 'a
 const sendMessage = r => require.ensure([], () => r(require('@/page/sendMessage')), 'sendMessage');
 const explain = r => require.ensure([], () => r(require('@/page/explain')), 'explain');
 
+const news = r => require.ensure([], () => r(require('@/page/news')), 'news');
+const team = r => require.ensure([], () => r(require('@/page/team')), 'team');
+const video = r => require.ensure([], () => r(require('@/page/video')), 'video');
+const link = r => require.ensure([], () => r(require('@/page/link')), 'link');
+const topics = r => require.ensure([], () => r(require('@/page/topics')), 'topics');
+const applyList = r => require.ensure([], () => r(require('@/page/applyList')), 'applyList');
+const setting = r => require.ensure([], () => r(require('@/page/setting')), 'setting');
+
+
 const routes = [
 	{
 		path: '/',
@@ -34,7 +43,45 @@ const routes = [
 			path: '',
 			component: home,
 			meta: [],
-		},{
+		},
+
+        {
+            path: '/news',
+            component: news,
+            meta: ['内容管理', '企业动态'],
+        },
+        {
+            path: '/team',
+            component: team,
+            meta: ['内容管理', '蜜蜂团队'],
+        },
+        {
+            path: '/video',
+            component: video,
+            meta: ['内容管理', '视频'],
+        },
+        {
+            path: '/link',
+            component: link,
+            meta: ['内容管理', '友情链接'],
+        },
+        {
+            path: '/topics',
+            component: topics,
+            meta: ['内容管理', '蜜蜂专题'],
+        },
+        {
+            path: '/applyList',
+            component: applyList,
+            meta: ['申请列表'],
+        },
+        {
+            path: '/setting',
+            component: setting,
+            meta: ['设置', '设置全站参数'],
+        },
+
+        {
 			path: '/addShop',
 			component: addShop,
 			meta: ['添加数据', '添加商铺'],

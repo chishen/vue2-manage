@@ -2,7 +2,7 @@
     <div class="header_container">
 
 		<el-breadcrumb separator="/">
-			<el-breadcrumb-item :to="{ path: '/manage' }">首页</el-breadcrumb-item>
+			<el-breadcrumb-item :to="{ path: '/news' }">首页</el-breadcrumb-item>
 			<el-breadcrumb-item v-for="(item, index) in $route.meta" key="index">{{item}}</el-breadcrumb-item>
 		</el-breadcrumb>
 		<el-dropdown @command="handleCommand" menu-align='start'>
@@ -38,7 +38,7 @@
 			...mapActions(['getAdminData']),
 			async handleCommand(command) {
 				if (command == 'home') {
-					this.$router.push('/manage');
+					this.$router.push('/news');
 				}else if(command == 'singout'){
 					const res = await signout()
 					if (res.status == 1) {
